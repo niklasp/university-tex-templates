@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+
+% allow to write non-ASCII characters directly
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage{datetime}
+\usepackage{lipsum}
+\usepackage[a4paper, margin={2.8cm, 4cm}]{geometry}
+
+\newdateformat{myformat}{\THEDAY\monthname[\THEMONTH], \THEYEAR}
+
+% line spacing
+\usepackage{setspace}
+
+% header
+\usepackage{fancyhdr}
+
+% provide \url{} and allow breaking lines on hyphens
+\usepackage[hyphens]{url}
+
+% links in your PDF
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,      % non-Latin characters in Acrobat's bookmarks
+    colorlinks=true,   % false: boxed links; true: colored links
+    linkcolor=black,   % color of internal links
+    citecolor=black,   % color of links to bibliography
+    filecolor=magenta, % color of file links
+    urlcolor=blue      % color of external links
+}
+
+% bibliography
+\bibliographystyle{plain}
+
+% begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip}
+
+\pagestyle{fancy} % Default page style
+\lhead{Name der Aufgabe}
+\chead{}
+\rhead{Mein Name}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0}
+\renewcommand{\footrulewidth}{0}
+\renewcommand{\headrulemargin}{1cm}
+\renewcommand{\headsep}{40pt}
+
+% Here we go!
+\begin{document}
+
+\doublespacing
+\section*{Erste Überschrift}
+\lipsum[1-5]
+
+\subsection*{Unterüberschrift}
+
+\lipsum[5-10]
+
+\section*{Ergebnis}
+"Das ist ein beispiel eines Zitates." \cite{kr}.
+
+\newpage
+
+
+\newpage
+\thispagestyle{empty} %First page style
+\linespread{1}
+\bibliography{bibliography}
+
+\end{document}
